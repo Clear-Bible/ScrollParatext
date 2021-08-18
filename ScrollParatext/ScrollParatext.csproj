@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="LiSaFT.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ParatextData" Version="9.2.4-alpha8" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.114.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ScrollParatext.Messages\ScrollParatext.Messages.csproj" />
+    <ProjectReference Include="..\ScrollParatext.SQLite\ScrollParatext.SQLite.csproj" />
+  </ItemGroup>
+
+</Project>
