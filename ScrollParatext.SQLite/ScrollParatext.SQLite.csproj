@@ -8,4 +8,10 @@
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.114.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="ManuscriptVerses.sqlite">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
