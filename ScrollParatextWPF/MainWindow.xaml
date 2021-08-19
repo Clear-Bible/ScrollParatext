@@ -8,10 +8,12 @@
     Title="MainWindow"
     Width="800"
     Height="450"
-    mc:Ignorable="d" Loaded="Window_Loaded">
+    Loaded="Window_Loaded"
+    mc:Ignorable="d">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -21,34 +23,83 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <ComboBox
+        <StackPanel
             Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Margin="10"
+            Orientation="Vertical">
+            <TextBlock Text="Scroll Group (Paratext) / Link Set (Logos) " />
+            <StackPanel Orientation="Horizontal">
+                <RadioButton
+                    x:Name="radA"
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    Content="A"
+                    GroupName="Links"
+                    IsChecked="True" />
+                <RadioButton
+                    x:Name="radB"
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    Content="D"
+                    GroupName="Links"
+                    IsChecked="False" />
+                <RadioButton
+                    x:Name="radC"
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    Content="C"
+                    GroupName="Links"
+                    IsChecked="False" />
+                <RadioButton
+                    x:Name="radD"
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    Content="D"
+                    GroupName="Links"
+                    IsChecked="False" />
+                <RadioButton
+                    x:Name="radE"
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    Content="E"
+                    GroupName="Links"
+                    IsChecked="False" />
+            </StackPanel>
+        </StackPanel>
+
+        <ComboBox
+            x:Name="cboBooks"
+            Grid.Row="1"
             Grid.Column="0"
             MinWidth="100"
             Margin="5,0,5,3"
-            ItemsSource="{Binding BookNames}"
             SelectionChanged="Book_SelectionChanged" />
+
         <ComboBox
-            Grid.Row="0"
+            x:Name="cboChapters"
+            Grid.Row="1"
             Grid.Column="1"
             MinWidth="30"
             Margin="5,0,5,3"
-            ItemsSource="{Binding ChapNums}"
             SelectionChanged="Chapter_SelectionChanged" />
+
         <ComboBox
-            Grid.Row="0"
+            x:Name="cboVerses"
+            Grid.Row="1"
             Grid.Column="2"
             MinWidth="30"
             Margin="5,0,5,3"
-            ItemsSource="{Binding VerseNums}"
             SelectionChanged="Verse_SelectionChanged" />
 
         <TextBlock
-            Grid.Row="1"
+            x:Name="lblVerseText"
+            Grid.Row="2"
             Grid.Column="0"
             Grid.ColumnSpan="4"
             Padding="10"
-            Text="{Binding Hebrew}"
+            FontSize="18"
             TextWrapping="WrapWithOverflow" />
     </Grid>
 </Window>

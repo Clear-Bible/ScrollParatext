@@ -4,7 +4,13 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <Company>Clear Bible Inc.</Company>
+    <Authors>Clear Bible Inc.</Authors>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ParatextData" Version="9.2.4-alpha8" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ScrollParatext.Messages\ScrollParatext.Messages.csproj" />

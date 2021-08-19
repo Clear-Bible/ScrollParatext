@@ -4,6 +4,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <Authors>Clear Bible Inc.</Authors>
+    <Company>Clear Bible Inc.</Company>
   </PropertyGroup>
 
   <ItemGroup>

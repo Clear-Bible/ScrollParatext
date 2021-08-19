@@ -37,6 +37,13 @@ namespace ScrollParatext
             cboBooks.Items.AddRange(bookList.ToArray());
         }
 
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // clean up
+            MessageEvents.MessageReceived -= OnSantaFeFocusMessage;
+            _conn.Close();
+        }
+
         /// ------------------------------------------------------------------------------------
         /// <summary>
         /// Called when a SantaFeFocusMessage is received.
@@ -109,13 +116,6 @@ namespace ScrollParatext
             lblVerseText.Text = rd.GetVerseText(verseID);
         }
 
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // clean up
-            MessageEvents.MessageReceived -= OnSantaFeFocusMessage;
-            _conn.Close();
-        }
-
         private void TriggerVerseChange(string verseID)
         {
             int ID = Convert.ToInt32(verseID);
@@ -160,17 +160,6 @@ namespace ScrollParatext
             cboChapters.SelectedIndex = 0;
         }
 
-        private void cboVerses_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ReadData rd = new ReadData(_conn);
-
-            string verseID = (cboBooks.SelectedIndex + 1).ToString().PadLeft(2, '0') + cboChapters.Text +
-                             cboVerses.Text;
-            lblVerseText.Text = rd.GetVerseText(verseID);
-
-            TriggerVerseChange(verseID);
-        }
-
         private void cboChapters_SelectedIndexChanged(object sender, EventArgs e)
         {
             // get the number of verses in the selected book/chapter
@@ -183,6 +172,17 @@ namespace ScrollParatext
             cboVerses.Items.Clear();
             cboVerses.Items.AddRange(versesList.ToArray());
             cboVerses.SelectedIndex = 0;
+        }
+
+        private void cboVerses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ReadData rd = new ReadData(_conn);
+
+            string verseID = (cboBooks.SelectedIndex + 1).ToString().PadLeft(2, '0') + cboChapters.Text +
+                             cboVerses.Text;
+            lblVerseText.Text = rd.GetVerseText(verseID);
+
+            TriggerVerseChange(verseID);
         }
     }
 }

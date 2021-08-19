@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Company>Clear Bible Inc.</Company>
+    <Authors>Clear Bible Inc.</Authors>
   </PropertyGroup>
 
   <ItemGroup>
