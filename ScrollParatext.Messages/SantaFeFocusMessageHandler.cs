@@ -1,4 +1,7 @@
 ﻿// ---------------------------------------------------------------------------------------------
+ 
+Code copied from the MIT licensed project here: https://github.com/sillsdev/libpalaso 
+ 
 #region // Copyright (c) 2007, SIL International. All Rights Reserved.
 // <copyright from='2007' to='2007' company='SIL International'>
 //		Copyright (c) 2007, SIL International. All Rights Reserved.   
